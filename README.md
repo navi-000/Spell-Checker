@@ -3,6 +3,8 @@
 ## For more info visit https://web-production-5e33.up.railway.app/documetation
 
 - screenshots
-  (https://github.com/vincentdeveloper/Grammarly-Clone/tree/main/screenshots)
+  ##are in the directory named screenshots
 
 # here is a demo
+
+https://web-production-26db.up.railway.app/
