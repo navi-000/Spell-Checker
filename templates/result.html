@@ -1,0 +1,64 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+<br></br>
+
+
+<div class="row">
+    <div class="col-sm-12 col-md-6 mt-4" data-aos="flip-left"  data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+        <div class="card text-left">
+          <img class="card-img-top" src="holder.js/100px180/" alt="">
+          <div class="card-body">
+ <div class="card shadow" style="min-height: 75vh; background-color:lightblue">
+            <img class="card-img-top" src="holder.js/100x180/" alt="">
+            <div class="card-body">
+                <h4 class="card-title alert alert-success text-center"> Correct spelling is:</h4>
+                <div class="card text-center">
+                    
+                    <div class="card-body">
+                       
+                        <textarea type="text" id="myInput" placeholder="Corrected text will appear here ...."  class="form-control" style="height: 50vh;">{{result}}</textarea>
+                    </div>
+                    <input type="button" class="btn btn-primary" value="copy" onclick="myFunction()">
+                </div>
+            </div>
+        </div>
+          </div>
+        </div>
+       
+    </div>
+    <div class="col-sm-12 col-md-6 mt-4" data-aos="flip-right"  data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+        <div class="card shadow">
+
+  <div class="card-body">
+    <div class="">
+
+      <p class="card-text text-center alert alert-success">Enter another  word  / sentence:</p>
+    </div>
+
+    <div class="card">
+      <div class="card-body" style="background-color: lightblue">
+        <form action="mispell" method="POST" style="min-height: 40vh">
+          {% csrf_token %}
+           <grammarly-editor-plugin>
+               <textarea id="summernote" class="form-control" name="word"></textarea>
+
+           </grammarly-editor-plugin>
+       
+          <br />
+          <div class="text-center">
+            <input type="submit" class="btn btn-success" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+</div>
+
+
+
+{% endblock %}

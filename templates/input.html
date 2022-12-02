@@ -1,0 +1,42 @@
+{% extends 'basic.html' %} {% block content %}
+
+<br />
+<br />
+
+<div
+  class="card shadow"
+  data-aos-easing="ease-out-cubic"
+  data-aos-duration="1500"
+  data-aos="fade-right"
+>
+  <img style="max-height: 20vh" class="card-img-top" src="" alt="" />
+  <div class="card-body">
+    <div class="">
+      <h4 class="card-title alert alert-danger text-center">
+        Type a paragraph or statement with wrong grammer and check what is does
+      </h4>
+      <p class="card-text text-center">Enter word / sentence:</p>
+    </div>
+
+    <div class="card">
+      <div class="card-body" style="background-color: lightblue">
+        <form action="mispell" method="POST" style="min-height: 40vh">
+          {% csrf_token %}
+          <grammarly-editor-plugin>
+            <textarea
+              id="summernote"
+              class="form-control"
+              spellcheck="true"
+              name="word"
+            ></textarea>
+          </grammarly-editor-plugin>
+
+          <div class="text-center">
+            <input type="submit" class="btn btn-block btn-success" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
